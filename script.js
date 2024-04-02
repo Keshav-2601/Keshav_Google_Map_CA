@@ -1,4 +1,5 @@
 function loadMap() {
+    var Searchbar=document.getElementById('searchbar');
     var mapOptions = {
         center: new google.maps.LatLng(54, -6.41),
         zoom: 18,
@@ -25,8 +26,7 @@ function loadMap() {
                         var marker=new google.maps.Marker({
                             map:map,
                             position:finalresult.geometry.location
-                        })
-
+                        }) 
                         var InfoWindow=new google.maps.InfoWindow();
                         google.maps.event.addListener(marker,'click',function(){
                             InfoWindow.setContent('<div><strong>' + finalresult.name + '</strong><br>' +
@@ -34,14 +34,20 @@ function loadMap() {
                             finalresult.formatted_address + '</div>')
                             InfoWindow.open(map,this)
                         })
+                    }else {
+                        console.error('Error fetching place details:', status);
                     }
                 })
+            } else {
+                console.error('No Places Found:', res.title);
             }
         })
     })
-   });
+   }).catch(error => {
+    console.error('Error fetching JSON:', error)
+    }
+   )
 }
-
 
 /**
  * Places API-functions
