@@ -1,0 +1,39 @@
+[
+  {
+    "title": "St. Patrick's Cathedral",
+    "latitude": "53.9977",
+    "longitude": "-6.4012",
+    "img": "https://example.com/st_patricks_cathedral.jpg",
+    "type": "landmark"
+  },
+  {
+    "title": "Dundalk Town Centre",
+    "latitude": "54.0011",
+    "longitude": "-6.4038",
+    "img": "https://example.com/dundalk_town_centre.jpg",
+    "type": "landmark"
+  },
+  {
+    "title": "Proleek Dolmen",
+    "latitude": "54.0397",
+    "longitude": "-6.3703",
+    "img": "https://example.com/proleek_dolmen.jpg",
+    "type": "landmark"
+  },
+  {
+    "title": "Dundalk Stadium",
+    "latitude": "53.9785",
+    "longitude": "-6.4255",
+    "img": "https://example.com/dundalk_stadium.jpg",
+    "type": "landmark"
+  },
+  {
+    "title": "Cooley Mountains",
+    "latitude": "54.0455",
+    "longitude": "-6.2147",
+    "img": "https://example.com/cooley_mountains.jpg",
+    "type": "natural"
+  }
+]
+
+  
