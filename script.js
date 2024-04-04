@@ -17,14 +17,15 @@ function loadMap() {
                 };
                 service.findPlaceFromQuery(request, function callback(result, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        // console.log('status at line 1 is:',status);
                         var placeId = result[0].place_id;
                         var detailsrequest = {
                             placeId: placeId,
-                            fields: ['address_components', 'business_status', 'name', 'opening_hours', 'photos', 'rating', 'reviews', 'url', 'vicinity']
+                            fields: ['address_components', 'business_status', 'name', 'opening_hours', 'photos', 'rating', 'reviews', 'url', 'vicinity','geometry']
                         };
-
                         service.getDetails(detailsrequest, function callback(finalresult, status) {
                             if (status == google.maps.places.PlacesServiceStatus.OK) {
+                                // console.log('status at line 2 is:',status);
                                 createMarker(finalresult, map);
                             } else {
                                 console.error('Error fetching place details:', status);
@@ -42,19 +43,20 @@ function loadMap() {
 }
 
 function createMarker(place, map) {
+    console.log('place api:',place);
     if (!place.geometry || !place.geometry.location) return;
-
-    const marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location,
-    });
-
-    const infowindow = new google.maps.InfoWindow();
-    google.maps.event.addListener(marker, "click", () => {
-        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-            'Place ID: ' + place.place_id + '<br>' +
-            place.formatted_address + '</div>');
-        infowindow.open(map, marker);
-    });
+        const marker = new google.maps.Marker({
+            map: map,
+            position:place.geometry.location,
+            mapId: 'c3a03b34da8f8d5a'
+        });
+        const infowindow = new google.maps.InfoWindow();
+        google.maps.event.addListener(marker, "click", () => {
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                'Place ID: ' + place.place_id + '<br>' +
+                place.formatted_address + '</div>');
+            infowindow.open(map, marker);
+        });
+   
 }
 

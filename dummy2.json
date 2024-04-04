@@ -1,39 +1,103 @@
 [
   {
-    "title": "St. Patrick's Cathedral",
-    "latitude": "53.9977",
-    "longitude": "-6.4012",
-    "img": "https://example.com/st_patricks_cathedral.jpg",
-    "type": "landmark"
+    "title": "Crowne Plaza Dundalk",
+    "latitude": "54.0086",
+    "longitude": "-6.3933",
+    "img": "https://example.com/crowne_plaza_dundalk.jpg",
+    "type": "hotel"
   },
   {
-    "title": "Dundalk Town Centre",
-    "latitude": "54.0011",
-    "longitude": "-6.4038",
-    "img": "https://example.com/dundalk_town_centre.jpg",
-    "type": "landmark"
+    "title": "Imperial Hotel Dundalk",
+    "latitude": "54.0019",
+    "longitude": "-6.4056",
+    "img": "https://example.com/imperial_hotel_dundalk.jpg",
+    "type": "hotel"
   },
   {
-    "title": "Proleek Dolmen",
-    "latitude": "54.0397",
-    "longitude": "-6.3703",
-    "img": "https://example.com/proleek_dolmen.jpg",
-    "type": "landmark"
+    "title": "Dundalk House",
+    "latitude": "54.0009",
+    "longitude": "-6.4029",
+    "img": "https://example.com/dundalk_house.jpg",
+    "type": "hotel"
   },
   {
-    "title": "Dundalk Stadium",
-    "latitude": "53.9785",
-    "longitude": "-6.4255",
-    "img": "https://example.com/dundalk_stadium.jpg",
-    "type": "landmark"
+    "title": "Fairways Hotel Dundalk",
+    "latitude": "54.0047",
+    "longitude": "-6.4013",
+    "img": "https://example.com/fairways_hotel_dundalk.jpg",
+    "type": "hotel"
   },
   {
-    "title": "Cooley Mountains",
-    "latitude": "54.0455",
-    "longitude": "-6.2147",
-    "img": "https://example.com/cooley_mountains.jpg",
-    "type": "natural"
+    "title": "Carnbeg Hotel & Spa",
+    "latitude": "54.0146",
+    "longitude": "-6.4042",
+    "img": "https://example.com/carnbeg_hotel_spa.jpg",
+    "type": "hotel"
+  },
+  {
+    "title": "Grove Hotel & Leisure Centre",
+    "latitude": "54.0015",
+    "longitude": "-6.4035",
+    "img": "https://example.com/grove_hotel_leisure_centre.jpg",
+    "type": "hotel"
+  },
+  {
+    "title": "The Jockey Club",
+    "latitude": "54.0094",
+    "longitude": "-6.3975",
+    "img": "https://example.com/the_jockey_club.jpg",
+    "type": "restaurant"
+  },
+  {
+    "title": "The Windsor Bar & Restaurant",
+    "latitude": "54.0058",
+    "longitude": "-6.3991",
+    "img": "https://example.com/the_windsor_bar_restaurant.jpg",
+    "type": "restaurant"
+  },
+  {
+    "title": "The Tap Room Restaurant",
+    "latitude": "54.0022",
+    "longitude": "-6.4052",
+    "img": "https://example.com/the_tap_room_restaurant.jpg",
+    "type": "restaurant"
+  },
+  {
+    "title": "McGeough's Bar & Restaurant",
+    "latitude": "54.0023",
+    "longitude": "-6.4006",
+    "img": "https://example.com/mcgeoughs_bar_restaurant.jpg",
+    "type": "restaurant"
+  },
+  {
+    "title": "Olympic Ice Rink Dundalk",
+    "latitude": "53.9947",
+    "longitude": "-6.3999",
+    "img": "https://example.com/olympic_ice_rink_dundalk.jpg",
+    "type": "amusement park"
+  },
+  {
+    "title": "Funtasia Waterpark",
+    "latitude": "53.9842",
+    "longitude": "-6.3846",
+    "img": "https://example.com/funtasia_waterpark.jpg",
+    "type": "amusement park"
+  },
+  {
+    "title": "Dundalk Ice Dome",
+    "latitude": "53.9775",
+    "longitude": "-6.3958",
+    "img": "https://example.com/dundalk_ice_dome.jpg",
+    "type": "amusement park"
+  },
+  {
+    "title": "Dundalk Golf Club",
+    "latitude": "53.9931",
+    "longitude": "-6.4036",
+    "img": "https://example.com/dundalk_golf_club.jpg",
+    "type": "amusement park"
   }
 ]
+
 
   
