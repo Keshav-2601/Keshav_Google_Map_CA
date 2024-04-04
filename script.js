@@ -21,7 +21,7 @@ function loadMap() {
                         var placeId = result[0].place_id;
                         var detailsrequest = {
                             placeId: placeId,
-                            fields: ['address_components', 'business_status', 'name', 'opening_hours', 'photos', 'rating', 'reviews', 'url', 'vicinity','geometry']
+                            fields: ['formatted_address','place_id','address_components', 'business_status', 'name', 'opening_hours', 'photos', 'rating', 'reviews', 'url', 'vicinity','geometry']
                         };
                         service.getDetails(detailsrequest, function callback(finalresult, status) {
                             if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -54,9 +54,9 @@ function createMarker(place, map) {
         google.maps.event.addListener(marker, "click", () => {
             infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
                 'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
+                place.formatted_address + '</div>'+'<br>'+place.rating+
+                'placeImg:');
             infowindow.open(map, marker);
         });
-   
 }
 
