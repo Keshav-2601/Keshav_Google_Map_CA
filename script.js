@@ -1,16 +1,20 @@
+var globalMarker=[];
 function loadMap() {
     var Searchbar = document.getElementById('searchbar');
     var filterbuttonDiv=document.createElement('div');
     filterbuttonDiv.className="filerDiv";
     var fiterbuttons=['Restraurent','Hotels','Amusement Park','Olympic Stadium'];
+    var Allids=['res','hot','Amu','oly'];
     for(let i=0;i<fiterbuttons.length;i++){
         var uniqueButton=document.createElement('button');
         uniqueButton.textContent=fiterbuttons[i];
         uniqueButton.className="variousfilterButton";
+        uniqueButton.id=Allids[i];
         filterbuttonDiv.appendChild(uniqueButton);
     }
     document.getElementById("parentElementId").appendChild(filterbuttonDiv);
-
+    
+    
     var mapOptions = {
         center: new google.maps.LatLng(54, -6.41),
         zoom: 18,
@@ -18,6 +22,8 @@ function loadMap() {
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var service = new google.maps.places.PlacesService(map);
+
+    
     fetch('dummy2.json')
         .then((res) => res.json())
         .then((result) => {
@@ -32,7 +38,7 @@ function loadMap() {
                         var placeId = result[0].place_id;
                         var detailsrequest = {
                             placeId: placeId,
-                            fields: ['formatted_address','place_id','address_components', 'business_status', 'name', 'opening_hours', 'photos', 'rating', 'reviews', 'url', 'vicinity','geometry']
+                            fields: ['types','formatted_address','place_id','address_components', 'business_status', 'name', 'opening_hours', 'photos', 'rating', 'reviews', 'url', 'vicinity','geometry']
                         };
                         service.getDetails(detailsrequest, function callback(finalresult, status) {
                             if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -51,6 +57,22 @@ function loadMap() {
         .catch(error => {
             console.error('Error fetching JSON:', error);
         });
+
+        document.getElementById('res').onclick=function(){
+            getallRestruarent(map);
+        }
+            
+}
+
+function getallRestruarent(){
+    for (let i = 0; i < globalMarker.length; i++) {
+        let markerObject = globalMarker[i];
+        console.log('Marker:',markerObject.marker);
+        console.log('Marker type:',markerObject.type);
+        if(markerObject.type!='restraurent'){
+            markerObject.marker.setVisible(false);
+        }
+    }
 }
 
 function createMarker(place, map) {
@@ -60,6 +82,10 @@ function createMarker(place, map) {
             map: map,
             position:place.geometry.location,
             mapId: 'c3a03b34da8f8d5a'
+        });
+        globalMarker.push({
+            marker: marker,
+            type: place.types[0]
         });
         const infowindow = new google.maps.InfoWindow();
         google.maps.event.addListener(marker, "click", () => {
