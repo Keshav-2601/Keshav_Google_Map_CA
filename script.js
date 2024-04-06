@@ -1,5 +1,16 @@
 function loadMap() {
     var Searchbar = document.getElementById('searchbar');
+    var filterbuttonDiv=document.createElement('div');
+    filterbuttonDiv.className="filerDiv";
+    var fiterbuttons=['Restraurent','Hotels','Amusement Park','Olympic Stadium'];
+    for(let i=0;i<fiterbuttons.length;i++){
+        var uniqueButton=document.createElement('button');
+        uniqueButton.textContent=fiterbuttons[i];
+        uniqueButton.className="variousfilterButton";
+        filterbuttonDiv.appendChild(uniqueButton);
+    }
+    document.getElementById("parentElementId").appendChild(filterbuttonDiv);
+
     var mapOptions = {
         center: new google.maps.LatLng(54, -6.41),
         zoom: 18,
