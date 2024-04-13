@@ -3,8 +3,8 @@ function loadMap() {
     var Searchbar = document.getElementById('searchbar');
     var filterbuttonDiv=document.createElement('div');
     filterbuttonDiv.className="filerDiv";
-    var fiterbuttons=['Restraurent','Hotels','Amusement Park','Olympic Stadium'];
-    var Allids=['res','hot','Amu','oly'];
+    var fiterbuttons=['Restraurent','museum','Amusement Park','Olympic Stadium'];
+    var Allids=['res','mus','Amu','oly'];
     for(let i=0;i<fiterbuttons.length;i++){
         var uniqueButton=document.createElement('button');
         uniqueButton.textContent=fiterbuttons[i];
@@ -13,10 +13,9 @@ function loadMap() {
         filterbuttonDiv.appendChild(uniqueButton);
     }
     document.getElementById("parentElementId").appendChild(filterbuttonDiv);
-    
-    
+   
     var mapOptions = {
-        center: new google.maps.LatLng(54, -6.41),
+        center: new google.maps.LatLng(48.856614, 2.35222190),
         zoom: 18,
         mapId: 'c3a03b34da8f8d5a'
     };
@@ -57,43 +56,101 @@ function loadMap() {
         .catch(error => {
             console.error('Error fetching JSON:', error);
         });
-
+        
         document.getElementById('res').onclick=function(){
-            getallRestruarent(map);
+           
+            getallRestaurants();
         }
-            
+        document.getElementById('mus').onclick=function(){
+            getallMuseum();
+        }    
+        document.getElementById('Amu').onclick=function(){
+            getallAmusementPark();
+        }    
+        document.getElementById('oly').onclick=function(){
+            getallOlympicParks();
+        }    
 }
 
-function getallRestruarent(){
+function getallRestaurants() {
     for (let i = 0; i < globalMarker.length; i++) {
         let markerObject = globalMarker[i];
-        console.log('Marker:',markerObject.marker);
-        console.log('Marker type:',markerObject.type);
-        if(markerObject.type!='restraurent'){
-            markerObject.marker.setVisible(false);
+        let isres=false;
+        for(let j=0;j<markerObject.type.length;j++){
+            if(markerObject.type[j]==='restaurant'){
+                isres=true;
+                break;
+            }
+            markerObject.marker.setVisible(isres);
         }
     }
 }
-
+function getallMuseum(){
+    for (let i = 0; i < globalMarker.length; i++) {
+        let markerObject = globalMarker[i];
+        let ismus=false;
+        for (let j = 0; j < markerObject.type.length; j++) {
+            if (markerObject.type[j] === 'museum') {
+                ismus=true;
+                break;
+            }
+            markerObject.marker.setVisible(ismus);
+        }
+    }
+}
+function getallAmusementPark(){
+    for (let i = 0; i < globalMarker.length; i++) {
+        let markerObject = globalMarker[i];
+        let isAmu=false;
+        for (let j = 0; j < markerObject.type.length; j++) {
+            if (markerObject.type[j] === 'park') {
+                isAmu=true;
+                break;
+            }
+            markerObject.marker.setVisible(isAmu);
+        }
+    }
+}
+function getallOlympicParks(){
+    for (let i = 0; i < globalMarker.length; i++) {
+        let markerObject = globalMarker[i];
+        let issta=false;
+        for (let j = 0; j < markerObject.type.length; j++) {
+            if (markerObject.type[j] === 'stadium') {
+                issta=true;
+                break;
+            }
+            markerObject.marker.setVisible(issta);
+        }
+    }
+}
 function createMarker(place, map) {
     console.log('place api:',place);
     if (!place.geometry || !place.geometry.location) return;
-        const marker = new google.maps.Marker({
-            map: map,
-            position:place.geometry.location,
-            mapId: 'c3a03b34da8f8d5a'
-        });
-        globalMarker.push({
-            marker: marker,
-            type: place.types[0]
-        });
-        const infowindow = new google.maps.InfoWindow();
-        google.maps.event.addListener(marker, "click", () => {
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>'+'<br>'+place.rating+
-                'placeImg:');
-            infowindow.open(map, marker);
-        });
+    const marker = new google.maps.Marker({
+        map: map,
+        position:place.geometry.location,
+        mapId: 'c3a03b34da8f8d5a'
+    });
+    globalMarker.push({
+        marker: marker,
+        type: place.types
+    });
+    const infowindow = new google.maps.InfoWindow();
+    google.maps.event.addListener(marker, "click", () => {
+        let content = '<div><strong>' + place.name + '</strong><br>' +
+            'Place ID: ' + place.place_id + '<br>' +
+            place.formatted_address + '</div>'+'<br>'+place.rating+
+            'placeImg:';
+        if (place.photos) {
+            place.photos.forEach(photo => {
+                content += '<br><img src="'+ photo.getUrl() + '" style="width: 200px; height: 200px;">';
+            });
+        }
+        infowindow.setContent(content);
+        infowindow.open(map, marker);
+    });
 }
 
+
+//Route Planner starting 
