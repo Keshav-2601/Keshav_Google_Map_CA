@@ -21,7 +21,7 @@ function loadMap() {
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var service = new google.maps.places.PlacesService(map);
-
+    
     
     fetch('dummy2.json')
         .then((res) => res.json())
@@ -70,6 +70,13 @@ function loadMap() {
         document.getElementById('oly').onclick=function(){
             getallOlympicParks();
         }    
+
+        //route planner
+        
+        document.getElementById('submitButton').onclick=function(){
+            calculatedistance(map);
+        }
+       
 }
 
 function getallRestaurants() {
@@ -151,6 +158,24 @@ function createMarker(place, map) {
         infowindow.open(map, marker);
     });
 }
-
-
+function calculatedistance(map){
+    let start=document.getElementById('start').value;
+    let end=document.getElementById('end').value;
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    var directionRenderer = new google.maps.DirectionsRenderer();
+    var directionService = new google.maps.DirectionsService();
+    directionService.route(request,function(result,status){
+        if(status==google.maps.DirectionsStatus.OK){
+            directionRenderer.set(result);
+            directionRenderer.setMap(map);
+        }
+        else{
+            console.log("Error not getting any route");
+        }
+    })
+}
 //Route Planner starting 
