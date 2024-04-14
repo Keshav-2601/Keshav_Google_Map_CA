@@ -72,9 +72,12 @@ function loadMap() {
         }    
 
         //route planner
-        
+        var directionRenderer = new google.maps.DirectionsRenderer({
+            suppressPolylines: false
+        });
+        var directionService = new google.maps.DirectionsService();
         document.getElementById('submitButton').onclick=function(){
-            calculatedistance(map);
+            calculatedistance(directionService,directionRenderer,map);
         }
        
 }
@@ -158,19 +161,22 @@ function createMarker(place, map) {
         infowindow.open(map, marker);
     });
 }
-function calculatedistance(map){
+function calculatedistance(directionService,directionRenderer,map){
     let start=document.getElementById('start').value;
     let end=document.getElementById('end').value;
+    console.log('start:',start);
+    console.log('End:',end);
     var request = {
         origin: start,
         destination: end,
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode.WALKING
     };
-    var directionRenderer = new google.maps.DirectionsRenderer();
-    var directionService = new google.maps.DirectionsService();
+   
+    
     directionService.route(request,function(result,status){
         if(status==google.maps.DirectionsStatus.OK){
-            directionRenderer.set(result);
+            console.log('Directions result:', result);
+            directionRenderer.setDirections(result);// use setdirection to get blue line okay
             directionRenderer.setMap(map);
         }
         else{
