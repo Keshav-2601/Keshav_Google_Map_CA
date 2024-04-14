@@ -1,4 +1,5 @@
 var globalMarker=[];
+var travelmode="DRIVING";
 function loadMap() {
     var Searchbar = document.getElementById('searchbar');
     var filterbuttonDiv=document.createElement('div');
@@ -79,6 +80,18 @@ function loadMap() {
         document.getElementById('submitButton').onclick=function(){
             calculatedistance(directionService,directionRenderer,map);
         }
+        document.getElementById('Walking').addEventListener('click',function(event){
+            travelmode="WALKING"
+            
+        })
+        document.getElementById('Driving').addEventListener('click',function(event){
+            travelmode="DRIVING";
+            
+        })
+        document.getElementById('Transit').addEventListener('click',function(event){
+            travelmode="TRANSIT";
+           
+        })
        
 }
 
@@ -166,13 +179,12 @@ function calculatedistance(directionService,directionRenderer,map){
     let end=document.getElementById('end').value;
     console.log('start:',start);
     console.log('End:',end);
+    
     var request = {
         origin: start,
         destination: end,
-        travelMode: google.maps.TravelMode.WALKING
+        travelMode: google.maps.TravelMode[travelmode]
     };
-   
-    
     directionService.route(request,function(result,status){
         if(status==google.maps.DirectionsStatus.OK){
             console.log('Directions result:', result);
