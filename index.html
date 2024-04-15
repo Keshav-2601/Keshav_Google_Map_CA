@@ -10,20 +10,23 @@
 
 <body>
     <div id=map></div>
+    <img src="" />
     <div>
         <input type="search" id="searchBar" placeholder="search" />
     </div>
     <div>
-        <input type="text" id="start"/>
-        <input type="end" id="end"/>
-        <button type="submit" id="submitButton">Submit</button>
+        <form>
+            <input type="text" id="start" placeholder="Start" />
+            <input type="end" id="end" placeholder="End" />
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
     </div>
-    <div>
+    <div class="button">
         <button id="Walking" value="WALKING">WALKING</button>
         <button id="Driving" value="DRIVING">DRIVING</button>
         <button id="Tansit" value="TRANSIT">TRANSIT</button>
     </div>
-    <div id="parentElementId"></div> 
+    <div id="parentElementId"></div>
     <script src="script.js"></script>
     <!-- Google Maps -->
     <script async defer

@@ -17,7 +17,7 @@ function loadMap() {
    
     var mapOptions = {
         center: new google.maps.LatLng(48.856614, 2.35222190),
-        zoom: 18,
+        zoom: 14,
         mapId: 'c3a03b34da8f8d5a'
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -77,21 +77,22 @@ function loadMap() {
             suppressPolylines: false
         });
         var directionService = new google.maps.DirectionsService();
-        document.getElementById('submitButton').onclick=function(){
+        document.getElementById('submitButton').onclick=function(even){
+            even.preventDefault();
             calculatedistance(directionService,directionRenderer,map);
         }
-        document.getElementById('Walking').addEventListener('click',function(event){
-            travelmode="WALKING"
+        // document.getElementById('Walking').addEventListener('click',function(event){
+        //     travelmode="WALKING"
             
-        })
-        document.getElementById('Driving').addEventListener('click',function(event){
-            travelmode="DRIVING";
+        // })
+        // document.getElementById('Driving').addEventListener('click',function(event){
+        //     travelmode="DRIVING";
             
-        })
-        document.getElementById('Transit').addEventListener('click',function(event){
-            travelmode="TRANSIT";
+        // })
+        // document.getElementById('Transit').addEventListener('click',function(event){
+        //     travelmode="TRANSIT";
            
-        })
+        // })
        
 }
 
@@ -186,6 +187,7 @@ function calculatedistance(directionService,directionRenderer,map){
         travelMode: google.maps.TravelMode[travelmode]
     };
     directionService.route(request,function(result,status){
+        console.log('Reseult',result);
         if(status==google.maps.DirectionsStatus.OK){
             console.log('Directions result:', result);
             directionRenderer.setDirections(result);// use setdirection to get blue line okay

@@ -1,6 +1,109 @@
 #map {
-  height: 500px;
+  height: 400px;
+  width: 50%;
+}
+
+#searchBar {
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  position: relative;
+  top: -500px;
+}
+
+.variousfilterButton {
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+#map {
   width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+#searchBar {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 300px;
+}
+form input[type=text], form input[type=end] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+form #submitButton {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+form #submitButton:hover {
+  background-color: #45a049;
+}
+
+.filerDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.filerDiv .variousfilterButton {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  position: relative;
+  top: -310px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+.filerDiv .variousfilterButton:hover {
+  background-color: #45a049;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button button {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  position: relative;
+  right: 600px;
+  top: -260px;
+  border: none;
+  background-color: #008CBA;
+  color: white;
+  cursor: pointer;
+}
+.button button:hover {
+  background-color: #007B9A;
 }
 
 /*# sourceMappingURL=google.css.map */
