@@ -111,6 +111,7 @@ function loadMap() {
             even.preventDefault();
             calculatedistance(directionService,directionRenderer,map);
         }
+        directionRenderer.setPanel(document.getElementById('Direction'));
         document.getElementById('Walking').addEventListener('click',function(event){
             travelmode="WALKING"
             calculatedistance(directionService,directionRenderer,map)
