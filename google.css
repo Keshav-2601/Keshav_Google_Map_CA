@@ -20,6 +20,7 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #f4f4f4;
+  background-image: url("https://www.mensjournal.com/.image/t_share/MjAzNDQ2NjM4MzIzNjQwMTE2/paris-2024-olympics-on-location.jpg");
 }
 
 #map {
@@ -52,6 +53,8 @@ form input[type=text], form input[type=end] {
   padding: 10px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
+  border-radius: 20px;
+  border: black solid 1.2px;
 }
 form #submitButton {
   width: 100%;
@@ -95,7 +98,7 @@ form #submitButton:hover {
   margin-bottom: 10px;
   padding: 10px 20px;
   position: relative;
-  right: 600px;
+  right: 560px;
   top: -260px;
   border: none;
   background-color: #008CBA;
