@@ -78,7 +78,7 @@ form #submitButton:hover {
   margin-bottom: 10px;
   padding: 10px 20px;
   position: relative;
-  top: -310px;
+  top: -360px;
   border: none;
   background-color: #4CAF50;
   color: white;
@@ -88,25 +88,19 @@ form #submitButton:hover {
   background-color: #45a049;
 }
 
-.button {
+.travellButton {
+  height: 300px;
+  width: 200px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
 }
-.button button {
-  margin-bottom: 10px;
-  padding: 10px 20px;
+.travellButton input[type=checkbox] {
+  display: inline-block;
+  margin-bottom: 2px;
   position: relative;
-  right: 560px;
-  top: -260px;
-  border: none;
-  background-color: #008CBA;
-  color: white;
+  bottom: -17px;
   cursor: pointer;
-}
-.button button:hover {
-  background-color: #007B9A;
 }
 
 #Direction {

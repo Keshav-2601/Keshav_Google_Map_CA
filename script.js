@@ -106,29 +106,75 @@ function loadMap() {
         var directionRenderer = new google.maps.DirectionsRenderer({
             suppressPolylines: false
         });
+
         var directionService = new google.maps.DirectionsService();
-        document.getElementById('submitButton').onclick=function(even){
-            even.preventDefault();
+
+        document.getElementById('submitButton').onclick=function(event){
+            event.preventDefault();
+
             calculatedistance(directionService,directionRenderer,map);
         }
+        
         directionRenderer.setPanel(document.getElementById('Direction'));
-        document.getElementById('Walking').addEventListener('click',function(event){
-            travelmode="WALKING"
-            calculatedistance(directionService,directionRenderer,map)
+
+        document.getElementById('kv_Walking').addEventListener('change',function(event){
+            if(this.checked){
+                travelmode="WALKING"
+                calculatedistance(directionService,directionRenderer,map)
+            }
+           else{
+            directionRenderer.setMap(null);
+           }
         })
-        document.getElementById('Driving').addEventListener('click',function(event){
+        document.getElementById('kv_Driving').addEventListener('change',function(event){
+            if(this.checked){
             travelmode="DRIVING";
             calculatedistance(directionService,directionRenderer,map)
-            
+            }
+            else{
+                directionRenderer.setMap(null);
+                
+            }
         })
-        document.getElementById('Transit').addEventListener('click',function(event){
-            travelmode="TRANSIT";
-            calculatedistance(directionService,directionRenderer,map)
+        document.getElementById('kv_Bus').addEventListener('change',function(event){
+            if(this.checked){
+                travelmode="BUS";
+                calculatedistance(directionService,directionRenderer,map)
+            }
+           else{
+            directionRenderer.setMap(null);
+           }
            
         })
-        document.getElementById('Bicycle').addEventListener('click',function(event){
-            travelmode="bICYCLING";
-            calculatedistance(directionService,directionRenderer,map)
+        document.getElementById('kv_Train').addEventListener('change',function(event){
+            if(this.checked){
+                travelmode="Train";
+                calculatedistance(directionService,directionRenderer,map)
+            }
+          else{
+            directionRenderer.setMap(null);
+          }
+           
+        })
+        document.getElementById('kv_Subway').addEventListener('change',function(event){
+            if(this.checked){
+                travelmode="SUBWAY";
+                calculatedistance(directionService,directionRenderer,map)
+            }
+           else{
+            directionRenderer.setMap(null);
+           }
+           
+        })
+
+        document.getElementById('kv_Bicycle').addEventListener('change',function(event){
+            if(this.checked){
+                travelmode="bICYCLING";
+                calculatedistance(directionService,directionRenderer,map)
+            }
+           else{
+            directionRenderer.setMap(null);
+           }
            
         })
        
