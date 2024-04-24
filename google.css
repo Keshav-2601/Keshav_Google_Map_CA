@@ -1,16 +1,3 @@
-#map {
-  height: 400px;
-  width: 50%;
-}
-
-#searchBar {
-  height: 40px;
-  width: 200px;
-  border-radius: 20px;
-  position: relative;
-  top: -500px;
-}
-
 .variousfilterButton {
   border-radius: 20px;
   cursor: pointer;
@@ -20,20 +7,16 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #f4f4f4;
-  background-image: url("https://www.mensjournal.com/.image/t_share/MjAzNDQ2NjM4MzIzNjQwMTE2/paris-2024-olympics-on-location.jpg");
+  background-image: url("https://wallpaperbat.com/img/8619726-paris-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #map {
-  width: 100%;
+  width: 50%;
   height: 400px;
   margin-bottom: 20px;
-}
-
-#searchBar {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
+  float: right;
 }
 
 form {
@@ -69,10 +52,10 @@ form #submitButton:hover {
 }
 
 .filerDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  height: 30px;
+  width: 600px;
+  position: relative;
+  left: 500px;
 }
 .filerDiv .variousfilterButton {
   margin-bottom: 10px;
@@ -86,6 +69,15 @@ form #submitButton:hover {
 }
 .filerDiv .variousfilterButton:hover {
   background-color: #45a049;
+}
+
+.formDiv {
+  height: 100px;
+  width: 200px;
+  float: right;
+  position: relative;
+  right: 200px;
+  bottom: 10px;
 }
 
 .travellButton {

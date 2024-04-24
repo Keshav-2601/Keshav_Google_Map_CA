@@ -1,19 +1,19 @@
 var globalMarker=[];
 var travelmode="DRIVING";
 function loadMap() {
-    var Searchbar = document.getElementById('searchbar');
-    var filterbuttonDiv=document.createElement('div');
-    filterbuttonDiv.className="filerDiv";
-    var fiterbuttons=['Restraurent','museum','Amusement Park','Olympic Stadium','All'];
-    var Allids=['res','mus','Amu','oly','All'];
-    for(let i=0;i<fiterbuttons.length;i++){
-        var uniqueButton=document.createElement('button');
-        uniqueButton.textContent=fiterbuttons[i];
-        uniqueButton.className="variousfilterButton";
-        uniqueButton.id=Allids[i];
-        filterbuttonDiv.appendChild(uniqueButton);
-    }
-    document.getElementById("parentElementId").appendChild(filterbuttonDiv);
+
+    // var filterbuttonDiv=document.createElement('div');
+    // filterbuttonDiv.className="filerDiv";
+    // var fiterbuttons=['Restraurent','museum','Amusement Park','Olympic Stadium','All'];
+    // var Allids=['kv_Res','kv_Mus','kv_Amu','kv_Oly','kv_All'];
+    // for(let i=0;i<fiterbuttons.length;i++){
+    //     var uniqueButton=document.createElement('button');
+    //     uniqueButton.textContent=fiterbuttons[i];
+    //     uniqueButton.className="variousfilterButton";
+    //     uniqueButton.id=Allids[i];
+    //     filterbuttonDiv.appendChild(uniqueButton);
+    // }
+    // document.getElementById("parentElementId").appendChild(filterbuttonDiv);
    
     var mapOptions = {
         center: new google.maps.LatLng(48.856614, 2.35222190),
@@ -59,7 +59,7 @@ function loadMap() {
         });
         
         let selectedtypes=[];
-        document.getElementById('res').onclick=function(){
+        document.getElementById('kv_Res').onclick=function(){
             let index=selectedtypes.indexOf('restaurant');
             if(index>-1){
                 selectedtypes.splice(index,1);
@@ -70,7 +70,7 @@ function loadMap() {
             filterMaker(selectedtypes);
         }
         
-        document.getElementById('mus').onclick=function(){
+        document.getElementById('kv_Mus').onclick=function(){
             let index=selectedtypes.indexOf('museum')
             if(index>-1){
                 selectedtypes.splice(index,1);
@@ -80,7 +80,7 @@ function loadMap() {
             }
             filterMaker(selectedtypes);
         }    
-        document.getElementById('Amu').onclick=function(){
+        document.getElementById('kv_Amu').onclick=function(){
             let index=selectedtypes.indexOf('park');
             if(index>-1){
                 selectedtypes.splice(index,1);
@@ -90,7 +90,7 @@ function loadMap() {
             }
             filterMaker(selectedtypes);
         }    
-        document.getElementById('oly').onclick=function(){
+        document.getElementById('kv_Oly').onclick=function(){
             let index=selectedtypes.indexOf('stadium');
             if(index>-1){
                 selectedtypes.splice(index,1);
@@ -100,7 +100,7 @@ function loadMap() {
             }
             filterMaker(selectedtypes);
         }    
-        document.getElementById('All').onclick=function(){
+        document.getElementById('kv_All').onclick=function(){
             getallMarker();
         }
         var directionRenderer = new google.maps.DirectionsRenderer({
@@ -114,7 +114,7 @@ function loadMap() {
 
             calculatedistance(directionService,directionRenderer,map);
         }
-        
+
         directionRenderer.setPanel(document.getElementById('Direction'));
 
         document.getElementById('kv_Walking').addEventListener('change',function(event){
@@ -200,7 +200,7 @@ function filterMaker(selectedtypes){
 
 
 function createMarker(place, map) {
-   // console.log('place api:',place);
+    console.log('place api:',place);
     if (!place.geometry || !place.geometry.location) return;
     const marker = new google.maps.Marker({
         map: map,
@@ -214,8 +214,24 @@ function createMarker(place, map) {
     const infowindow = new google.maps.InfoWindow();
     google.maps.event.addListener(marker, "click", () => {
         let content = '<div><strong>' + place.name + '</strong><br>' +
-            'Place ID: ' + place.place_id + '<br>' +
-            place.formatted_address + '</div>'+'<br>'+place.rating+
+            '<strong>Business_status:</strong> '+place.business_status+'<br>' + '<br>' +'<strong>Address:</strong>'+
+            place.formatted_address + '</div>'+'<br>'+'<strong>Opening Hours:</strong>';
+            if(place.opening_hours.weekday_text){
+                for(let i=0;i<place.opening_hours.weekday_text.length;i++){
+                     content+='<br>'+place.opening_hours.weekday_text[i]+ '<br>';
+                }
+            }
+             'Rating:';
+            if (place.rating) {
+                for (let i = 0; i < Math.floor(place.rating); i++) {
+                    content += '<span style="color: gold;">&#9733;</span>';
+                }
+                if (place.rating % 1 > 0) {
+                    content += '<span style="color: gold;">&#9734;</span>';
+                }
+            } else {
+                content += 'Not available';
+            }
             'placeImg:';
         if (place.photos) {
             place.photos.forEach(photo => {
