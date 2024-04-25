@@ -15,14 +15,14 @@
     <!-- <div>
         <input type="search" id="searchBar" placeholder="search" />
     </div> -->
-    <div class="formDiv">
+    <div class="kv_formDiv">
         <form>
             <input type="text" id="kv_start" placeholder="Start" />
             <input type="end" id="kv_end" placeholder="End" />
-            <button type="submit" id="submitButton">Submit</button>
+            <button type="submit" id="kv_submitButton">Submit</button>
         </form>
     </div>
-    <div class="travellButton">
+    <div class="kv_travellButton">
         <input type="checkbox" id="kv_Walking" value="WALKING">WALKING</input type="checkbox">
         <input type="checkbox" id="kv_Driving" value="DRIVING">DRIVING</input type="checkbox">
         <input type="checkbox" id="kv_Bicycle" value="BICYCLE">BICYCLE</input type="checkbox">
@@ -30,17 +30,133 @@
         <input type="checkbox" id="kv_Train" value="Train">TRAIN</input type="checkbox">
         <input type="checkbox" id="kv_Subway" value="SUBWAY">SUBWAY</button>
     </div>
-    <div id="parentElementId">
-        <button class="variousfilterButton" id="kv_Res">Restraurent</button>
-        <button class="variousfilterButton" id="kv_Mus">Museum</button>
-        <button class="variousfilterButton" id="kv_Amu">Amusement Park</button>
-        <button class="variousfilterButton" id="kv_Oly">Olympic Stadium</button>
-        <button class="variousfilterButton" id="kv_All">All</button>
+    <div id="kv_parentElementId">
+        <button class="kv_variousfilterButton" id="kv_Res">Restraurent</button>
+        <button class="kv_variousfilterButton" id="kv_Mus">Museum</button>
+        <button class="kv_variousfilterButton" id="kv_Amu">Amusement Park</button>
+        <button class="kv_variousfilterButton" id="kv_Oly">Olympic Stadium</button>
+        <button class="kv_variousfilterButton" id="kv_All">All</button>
+    </div>
+    <div class="kv_currencyOption">
+        <input type="number" id="kv_initalValue"/>
+        <label>From</label>
+        <select id="kv_from_Selected" class="kv_currencies">
+            <option value="">Select One …</option>
+            <option value="USD">USD</option>
+            <option value="AED">AED</option>
+            <option value="ARS">ARS</option>
+            <option value="AUD">AUD</option>
+            <option value="BGN">BGN</option>
+            <option value="BRL">BRL</option>
+            <option value="BSD">BSD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CLP">CLP</option>
+            <option value="CNY">CNY</option>
+            <option value="COP">COP</option>
+            <option value="CZK">CZK</option>
+            <option value="DKK">DKK</option>
+            <option value="DOP">DOP</option>
+            <option value="EGP">EGP</option>
+            <option value="EUR">EUR</option>
+            <option value="FJD">FJD</option>
+            <option value="GBP">GBP</option>
+            <option value="GTQ">GTQ</option>
+            <option value="HKD">HKD</option>
+            <option value="HRK">HRK</option>
+            <option value="HUF">HUF</option>
+            <option value="IDR">IDR</option>
+            <option value="ILS">ILS</option>
+            <option value="INR">INR</option>
+            <option value="ISK">ISK</option>
+            <option value="JPY">JPY</option>
+            <option value="KRW">KRW</option>
+            <option value="KZT">KZT</option>
+            <option value="MVR">MVR</option>
+            <option value="MXN">MXN</option>
+            <option value="MYR">MYR</option>
+            <option value="NOK">NOK</option>
+            <option value="NZD">NZD</option>
+            <option value="PAB">PAB</option>
+            <option value="PEN">PEN</option>
+            <option value="PHP">PHP</option>
+            <option value="PKR">PKR</option>
+            <option value="PLN">PLN</option>
+            <option value="PYG">PYG</option>
+            <option value="RON">RON</option>
+            <option value="RUB">RUB</option>
+            <option value="SAR">SAR</option>
+            <option value="SEK">SEK</option>
+            <option value="SGD">SGD</option>
+            <option value="THB">THB</option>
+            <option value="TRY">TRY</option>
+            <option value="TWD">TWD</option>
+            <option value="UAH">UAH</option>
+            <option value="UYU">UYU</option>
+            <option value="ZAR">ZAR</option>
+        </select>
+        <label>To</label>
+        <select id='kv_to_Selected' class="kv_currencies">
+            <option value="">Select One …</option>
+            <option value="USD">USD</option>
+            <option value="AED">AED</option>
+            <option value="ARS">ARS</option>
+            <option value="AUD">AUD</option>
+            <option value="BGN">BGN</option>
+            <option value="BRL">BRL</option>
+            <option value="BSD">BSD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CLP">CLP</option>
+            <option value="CNY">CNY</option>
+            <option value="COP">COP</option>
+            <option value="CZK">CZK</option>
+            <option value="DKK">DKK</option>
+            <option value="DOP">DOP</option>
+            <option value="EGP">EGP</option>
+            <option value="EUR">EUR</option>
+            <option value="FJD">FJD</option>
+            <option value="GBP">GBP</option>
+            <option value="GTQ">GTQ</option>
+            <option value="HKD">HKD</option>
+            <option value="HRK">HRK</option>
+            <option value="HUF">HUF</option>
+            <option value="IDR">IDR</option>
+            <option value="ILS">ILS</option>
+            <option value="INR">INR</option>
+            <option value="ISK">ISK</option>
+            <option value="JPY">JPY</option>
+            <option value="KRW">KRW</option>
+            <option value="KZT">KZT</option>
+            <option value="MVR">MVR</option>
+            <option value="MXN">MXN</option>
+            <option value="MYR">MYR</option>
+            <option value="NOK">NOK</option>
+            <option value="NZD">NZD</option>
+            <option value="PAB">PAB</option>
+            <option value="PEN">PEN</option>
+            <option value="PHP">PHP</option>
+            <option value="PKR">PKR</option>
+            <option value="PLN">PLN</option>
+            <option value="PYG">PYG</option>
+            <option value="RON">RON</option>
+            <option value="RUB">RUB</option>
+            <option value="SAR">SAR</option>
+            <option value="SEK">SEK</option>
+            <option value="SGD">SGD</option>
+            <option value="THB">THB</option>
+            <option value="TRY">TRY</option>
+            <option value="TWD">TWD</option>
+            <option value="UAH">UAH</option>
+            <option value="UYU">UYU</option>
+            <option value="ZAR">ZAR</option>
+        </select>&nbsp;&nbsp;
+        <button id="kv_button">Go</button>
     </div>
     <div id="Direction">
 
     </div>
-    <div id="parentElementId"></div>
+    <div id="kv_parentElementId"></div>
     <script src="script.js"></script>
     <!-- Google Maps -->
     <script async defer

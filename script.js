@@ -1,20 +1,6 @@
 var globalMarker = [];
 var travelmode = "DRIVING";
 function loadMap() {
-
-    // var filterbuttonDiv=document.createElement('div');
-    // filterbuttonDiv.className="filerDiv";
-    // var fiterbuttons=['Restraurent','museum','Amusement Park','Olympic Stadium','All'];
-    // var Allids=['kv_Res','kv_Mus','kv_Amu','kv_Oly','kv_All'];
-    // for(let i=0;i<fiterbuttons.length;i++){
-    //     var uniqueButton=document.createElement('button');
-    //     uniqueButton.textContent=fiterbuttons[i];
-    //     uniqueButton.className="variousfilterButton";
-    //     uniqueButton.id=Allids[i];
-    //     filterbuttonDiv.appendChild(uniqueButton);
-    // }
-    // document.getElementById("parentElementId").appendChild(filterbuttonDiv);
-
     var mapOptions = {
         center: new google.maps.LatLng(48.856614, 2.35222190),
         zoom: 14,
@@ -109,7 +95,7 @@ function loadMap() {
 
     var directionService = new google.maps.DirectionsService();
 
-    document.getElementById('submitButton').onclick = function (event) {
+    document.getElementById('kv_submitButton').onclick = function (event) {
         event.preventDefault();
 
         calculatedistance(directionService, directionRenderer, map);
@@ -169,7 +155,7 @@ function loadMap() {
 
     document.getElementById('kv_Bicycle').addEventListener('change', function (event) {
         if (this.checked) {
-            travelmode = "bICYCLING";
+            travelmode = "BICYCLING";
             calculatedistance(directionService, directionRenderer, map)
         }
         else {
@@ -205,7 +191,16 @@ function loadMap() {
         const location = place.geometry.location;
         console.log('Selected end location:', location.lat(), location.lng());
     });
-    
+    const currencyconvertor=document.getElementById('kv_button');
+    currencyconvertor.addEventListener('click',function(){
+        const host='api.frankfurter.app';
+        const currentvalue=document.getElementById('kv_initalValue').value;
+        const from_value=document.getElementById('kv_from_Selected').value;
+        const to_value=document.getElementById('kv_to_Selected').value
+        fetch(`https://${host}/latest?amount=${currentvalue}&from=${from_value}&to=${to_value}`)
+        .then((result)=>result.json()).catch((error)=>console.log('erroris :->',error))
+        .then((res)=>console.log(res));
+    })
 }
 function getallMarker() {
     for (let i = 0; i < globalMarker.length; i++) {

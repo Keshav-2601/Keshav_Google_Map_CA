@@ -1,5 +1,9 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$border-color: #ced4da;
 
- .variousfilterButton{
+ .kv_variousfilterButton{
     border-radius: 20px;
     cursor: pointer;
  }
@@ -40,7 +44,7 @@ form {
         border:black solid 1.2px;
     }
 
-    #submitButton {
+    #kv_submitButton {
         width: 100%;
         padding: 10px;
         border: none;
@@ -60,7 +64,7 @@ form {
     width:600px;
     position: relative;
     left:500px;
-    .variousfilterButton {
+    .kv_variousfilterButton {
         margin-bottom: 10px;
         padding: 10px 20px;
         position:relative;
@@ -76,7 +80,7 @@ form {
     }
 }
 
-.formDiv{
+.kv_formDiv{
     height: 100px;
     width:200px;
     float: right;
@@ -84,7 +88,7 @@ form {
     right:200px;
     bottom:10px;
 }
-.travellButton {
+.kv_travellButton {
         height: 300px;
         width: 200px;
         display: flex;
@@ -108,3 +112,48 @@ form {
     margin-top:20px;
     margin-bottom:50px;
 }
+.kv_currencyOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    
+    label {
+      margin: 0 10px;
+      color: red;
+      font-weight: bold;
+    }
+    
+    select {
+      padding: 8px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background-color: $background-color;
+      color: $primary-color;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    input[type="number"] {
+      padding: 8px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background-color: $background-color;
+      color: $primary-color;
+      font-size: 16px;
+    }
+  }
+  #kv_button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary-color;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }

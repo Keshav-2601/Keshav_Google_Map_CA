@@ -1,4 +1,4 @@
-.variousfilterButton {
+.kv_variousfilterButton {
   border-radius: 20px;
   cursor: pointer;
 }
@@ -39,7 +39,7 @@ form input[type=text], form input[type=end] {
   border-radius: 20px;
   border: black solid 1.2px;
 }
-form #submitButton {
+form #kv_submitButton {
   width: 100%;
   padding: 10px;
   border: none;
@@ -47,7 +47,7 @@ form #submitButton {
   color: white;
   cursor: pointer;
 }
-form #submitButton:hover {
+form #kv_submitButton:hover {
   background-color: #45a049;
 }
 
@@ -57,7 +57,7 @@ form #submitButton:hover {
   position: relative;
   left: 500px;
 }
-.filerDiv .variousfilterButton {
+.filerDiv .kv_variousfilterButton {
   margin-bottom: 10px;
   padding: 10px 20px;
   position: relative;
@@ -67,11 +67,11 @@ form #submitButton:hover {
   color: white;
   cursor: pointer;
 }
-.filerDiv .variousfilterButton:hover {
+.filerDiv .kv_variousfilterButton:hover {
   background-color: #45a049;
 }
 
-.formDiv {
+.kv_formDiv {
   height: 100px;
   width: 200px;
   float: right;
@@ -80,14 +80,14 @@ form #submitButton:hover {
   bottom: 10px;
 }
 
-.travellButton {
+.kv_travellButton {
   height: 300px;
   width: 200px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
-.travellButton input[type=checkbox] {
+.kv_travellButton input[type=checkbox] {
   display: inline-block;
   margin-bottom: 2px;
   position: relative;
@@ -100,6 +100,49 @@ form #submitButton:hover {
   margin: 0px;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+.kv_currencyOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.kv_currencyOption label {
+  margin: 0 10px;
+  color: red;
+  font-weight: bold;
+}
+.kv_currencyOption select {
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.kv_currencyOption input[type=number] {
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #007bff;
+  font-size: 16px;
+}
+
+#kv_button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#kv_button:hover {
+  background-color: #0062cc;
 }
 
 /*# sourceMappingURL=google.css.map */
