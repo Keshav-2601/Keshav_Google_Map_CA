@@ -103,23 +103,15 @@ function loadMap() {
 
     directionRenderer.setPanel(document.getElementById('Direction'));
 
-    // document.getElementById('kv_travellOptions').addEventListener('select',function(event){
-    //     if(this.value!=""){
-    //         travelmode=this.value;
-    //     }
-    //     else{
-    //         directionRenderer.setMap(null);
-    //     }
-    // })
     const startcity = document.getElementById('kv_start');
     const endcity = document.getElementById('kv_end');
-    
+
     const startAutocomplete = new google.maps.places.Autocomplete(startcity);
     const endAutocomplete = new google.maps.places.Autocomplete(endcity);
-    
+
     startAutocomplete.setFields(['geometry', 'formatted_address']);
     endAutocomplete.setFields(['geometry', 'formatted_address']);
-    
+
     google.maps.event.addListener(startAutocomplete, 'place_changed', function () {
         const place = startAutocomplete.getPlace();
         if (!place.geometry) {
@@ -129,7 +121,7 @@ function loadMap() {
         const location = place.geometry.location;
         console.log('Selected start location:', location.lat(), location.lng());
     });
-    
+
     google.maps.event.addListener(endAutocomplete, 'place_changed', function () {
         const place = endAutocomplete.getPlace();
         if (!place.geometry) {
@@ -139,19 +131,66 @@ function loadMap() {
         const location = place.geometry.location;
         console.log('Selected end location:', location.lat(), location.lng());
     });
-    const currencyconvertor=document.getElementById('kv_button');
-    currencyconvertor.addEventListener('click',function(){
-        const host='api.frankfurter.app';
-        const currentvalue=document.getElementById('kv_initalValue').value;
-        const from_value=document.getElementById('kv_from_Selected').value;
-        const to_value=document.getElementById('kv_to_Selected').value
+    const currencyconvertor = document.getElementById('kv_button');
+    currencyconvertor.addEventListener('click', function () {
+        const host = 'api.frankfurter.app';
+        const currentvalue = document.getElementById('kv_initalValue').value;
+        const from_value = document.getElementById('kv_from_Selected').value;
+        const to_value = document.getElementById('kv_to_Selected').value
         fetch(`https://${host}/latest?amount=${currentvalue}&from=${from_value}&to=${to_value}`)
-        .then((result)=>result.json()).catch((error)=>console.log('erroris :->',error))
-        .then((res)=>
-        document.getElementById('kv_result').value=res.rates[to_value]
-        );
+            .then((result) => result.json()).catch((error) => console.log('erroris :->', error))
+            .then((res) =>
+                document.getElementById('kv_result').value = res.rates[to_value]
+            );
+    })
+    document.getElementById('kv_langButton').addEventListener('click', function () {
+        const text = document.getElementById('kv_para').textContent;
+        const options = {
+            method: 'POST',
+            headers: {
+                Authorization: ` Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2I1MDgzMmMtNDFkMi00Y2Q1LWI4ZDEtMmNkNzEzZTY5OGQyIiwidHlwZSI6ImFwaV90b2tlbiJ9.iUMJFGE1ibnYRKeswIRTFnogE8xvXXR9zTSP4mxf_M0`,
+                accept: 'application/json', 'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                response_as_dict: true,
+                attributes_as_list: false,
+                show_original_response: false,
+                providers: 'amazon',
+                text: `${text}`
+            })
+        };
+        let detect_language = null;
+        fetch('https://api.edenai.run/v2/translation/language_detection', options)
+            .then(response => response.json())
+            .then(response => {
+                detect_language = (response.amazon.items[0].display_name);
+                console.log(detect_language)
+                let to_value = document.getElementById('kv_lanOptions').value;
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded',
+                        'X-RapidAPI-Key': 'f6bd5cdf99mshceda3653ead26aap13ae90jsn119819c1fa7a',
+                        'X-RapidAPI-Host': 'nlp-translation.p.rapidapi.com'
+                    },
+                    body: new URLSearchParams({
+                        text: `${text}`,
+                        to: `${to_value}`,
+                        from: `${detect_language}`
+                    })
+                };
+                fetch(`https://nlp-translation.p.rapidapi.com/v1/translate`,options)
+                    .then((res) => res.json()).catch((error)=>console.log(error))
+                    .then((result)=>{
+                        console.log('result:',result);
+                        document.getElementById('kv_para').textContent=result.translated_text[document.getElementById('kv_lanOptions').value];
+                    }).catch((error)=>console.log(error));
+
+            })
+            .catch(err => console.error('The error is :->',err));
     })
 }
+
 function getallMarker() {
     for (let i = 0; i < globalMarker.length; i++) {
         let markerObject = globalMarker[i];
@@ -218,10 +257,10 @@ function createMarker(place, map) {
 function calculatedistance(directionService, directionRenderer, map) {
     let start = document.getElementById('kv_start').value;
     let end = document.getElementById('kv_end').value;
-    travelmode=document.getElementById('kv_travellOptions').value;
+    travelmode = document.getElementById('kv_travellOptions').value;
     console.log('start:', start);
     console.log('End:', end);
-   
+
     var request = {
         origin: start,
         destination: end,
