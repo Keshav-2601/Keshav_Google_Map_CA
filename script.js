@@ -103,66 +103,14 @@ function loadMap() {
 
     directionRenderer.setPanel(document.getElementById('Direction'));
 
-    document.getElementById('kv_Walking').addEventListener('change', function (event) {
-        if (this.checked) {
-            travelmode = "WALKING"
-            calculatedistance(directionService, directionRenderer, map)
-        }
-        else {
-            directionRenderer.setMap(null);
-        }
-    })
-    document.getElementById('kv_Driving').addEventListener('change', function (event) {
-        if (this.checked) {
-            travelmode = "DRIVING";
-            calculatedistance(directionService, directionRenderer, map)
-        }
-        else {
-            directionRenderer.setMap(null);
-
-        }
-    })
-    document.getElementById('kv_Bus').addEventListener('change', function (event) {
-        if (this.checked) {
-            travelmode = "BUS";
-            calculatedistance(directionService, directionRenderer, map)
-        }
-        else {
-            directionRenderer.setMap(null);
-        }
-
-    })
-    document.getElementById('kv_Train').addEventListener('change', function (event) {
-        if (this.checked) {
-            travelmode = "Train";
-            calculatedistance(directionService, directionRenderer, map)
-        }
-        else {
-            directionRenderer.setMap(null);
-        }
-
-    })
-    document.getElementById('kv_Subway').addEventListener('change', function (event) {
-        if (this.checked) {
-            travelmode = "SUBWAY";
-            calculatedistance(directionService, directionRenderer, map)
-        }
-        else {
-            directionRenderer.setMap(null);
-        }
-
-    })
-
-    document.getElementById('kv_Bicycle').addEventListener('change', function (event) {
-        if (this.checked) {
-            travelmode = "BICYCLING";
-            calculatedistance(directionService, directionRenderer, map)
-        }
-        else {
-            directionRenderer.setMap(null);
-        }
-
-    })
+    // document.getElementById('kv_travellOptions').addEventListener('select',function(event){
+    //     if(this.value!=""){
+    //         travelmode=this.value;
+    //     }
+    //     else{
+    //         directionRenderer.setMap(null);
+    //     }
+    // })
     const startcity = document.getElementById('kv_start');
     const endcity = document.getElementById('kv_end');
     
@@ -199,7 +147,9 @@ function loadMap() {
         const to_value=document.getElementById('kv_to_Selected').value
         fetch(`https://${host}/latest?amount=${currentvalue}&from=${from_value}&to=${to_value}`)
         .then((result)=>result.json()).catch((error)=>console.log('erroris :->',error))
-        .then((res)=>console.log(res));
+        .then((res)=>
+        document.getElementById('kv_result').value=res.rates[to_value]
+        );
     })
 }
 function getallMarker() {
@@ -268,9 +218,10 @@ function createMarker(place, map) {
 function calculatedistance(directionService, directionRenderer, map) {
     let start = document.getElementById('kv_start').value;
     let end = document.getElementById('kv_end').value;
+    travelmode=document.getElementById('kv_travellOptions').value;
     console.log('start:', start);
     console.log('End:', end);
-
+   
     var request = {
         origin: start,
         destination: end,

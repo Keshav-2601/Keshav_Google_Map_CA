@@ -2,6 +2,9 @@ $primary-color: #007bff;
 $secondary-color: #6c757d;
 $background-color: #f8f9fa;
 $border-color: #ced4da;
+$blue: #0055a4;
+$white: #ffffff;
+$red: #ef4135;
 
  .kv_variousfilterButton{
     border-radius: 20px;
@@ -11,16 +14,18 @@ $border-color: #ced4da;
     font-family: Arial, sans-serif;
     color: #333;
     background-color: #f4f4f4;
-    background-image: url('https://wallpaperbat.com/img/8619726-paris-wallpaper.jpg');
+    // background-image: url('https://wallpaperbat.com/img/8619726-paris-wallpaper.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #map {
-    width: 50%;
+    width: 70%;
     height: 400px;
     margin-bottom: 20px;
     float:right;
+    position:relative;
+    right:50px;
 }
 
 form {
@@ -34,6 +39,9 @@ form {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     margin: 0 auto;
     width: 300px;
+    position: relative;
+    bottom:390px;
+
 
     input[type="text"], input[type="end"] {
         width: 100%;
@@ -58,28 +66,6 @@ form {
     }
 }
 
-
-.filerDiv {
-    height: 30px;
-    width:600px;
-    position: relative;
-    left:500px;
-    .kv_variousfilterButton {
-        margin-bottom: 10px;
-        padding: 10px 20px;
-        position:relative;
-        top:-360px;
-        border: none;
-        background-color: #4CAF50;
-        color: white;
-        cursor: pointer;
-
-        &:hover {
-            background-color: #45a049;
-        }
-    }
-}
-
 .kv_formDiv{
     height: 100px;
     width:200px;
@@ -88,21 +74,7 @@ form {
     right:200px;
     bottom:10px;
 }
-.kv_travellButton {
-        height: 300px;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
 
-    input[type="checkbox"] {
-        display: inline-block;
-        margin-bottom: 2px;
-        position: relative;
-        bottom: -17px;
-        cursor: pointer;
-    }
-}
 
 
 
@@ -117,7 +89,9 @@ form {
     align-items: center;
     justify-content: center;
     margin: 20px;
-    
+    position: relative;
+    bottom:200px;
+    left: 230px;
     label {
       margin: 0 10px;
       color: red;
@@ -134,7 +108,7 @@ form {
       cursor: pointer;
     }
     
-    input[type="number"] {
+    input[type="text"],input[type='number'] {
       padding: 8px;
       border: 1px solid $border-color;
       border-radius: 5px;
@@ -157,3 +131,95 @@ form {
       background-color: darken($primary-color, 10%);
     }
   }
+  .kv_infoFrance {
+    width: 300px;
+    #kv_para {
+        color: $blue; 
+        background-color: $white; 
+        padding: 20px; 
+        
+        
+        border: 2px solid $red;
+        border-radius: 5px; 
+        
+       
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 20px 0;
+    }
+}
+#kv_parentElementId{
+    height: 20px;
+    width:500px;
+    position: relative;
+    bottom: 800px;
+    left:800px;
+}
+
+.kv_variousfilterButton {
+    background-color: #ffffff; 
+    border: 1px solid #cccccc; 
+    color: #333333;
+    padding: 8px 16px; 
+    margin: 2px; 
+    font-size: 14px; 
+    cursor: pointer;   
+    &:hover {
+        background-color: #f0f0f0; 
+    }
+}
+
+#kv_Res {
+    background-color: #ffcc80;
+    &:hover {
+        background-color: #ffa726; 
+    }
+}
+
+#kv_Mus {
+    background-color: #90caf9; 
+    &:hover {
+        background-color: #64b5f6; 
+    }
+}
+
+#kv_Amu {
+    background-color: #a5d6a7; 
+    &:hover {
+        background-color: #81c784; 
+    }
+}
+
+#kv_Oly {
+    background-color: #b39ddb; 
+    &:hover {
+        background-color: #9575cd; 
+    }
+}
+
+#kv_All {
+    background-color: #eeeeee; 
+    &:hover {
+        background-color: #cccccc; 
+    }
+}
+#kv_travellOptions{
+    
+        background-color: #ffffff; 
+        border: 1px solid #cccccc; 
+        color: #333333; 
+        padding: 8px 16px; 
+        font-size: 14px; 
+        cursor: pointer; 
+        outline: none;
+        width: 100%; 
+        margin-top: 5px; 
+        margin-bottom: 7px;
+        option {
+            background-color: #ffffff; 
+            color: #333333; 
+        }
+    
+    
+}

@@ -11,34 +11,49 @@
 <body>
 
     <div id=map></div>
-    <img src="" />
-    <!-- <div>
-        <input type="search" id="searchBar" placeholder="search" />
-    </div> -->
+    <div class="kv_infoFrance">
+        <h1>French Olmypic History</h1>
+        <p id="kv_para">
+            The modern Olympic Games were founded by French historian Pierre de Coubertin.
+            France has competed in every edition (both Summer and Winter),
+            with the possible exception of the 1904 Games (as sources disagree about whether athlete Albert Corey
+            competed for the United States or France).
+            French athletes have won 751 medals at the Summer Olympic Games in a wide variety of sports,
+            achieving particular success in fencing and cycling.
+            France has won an additional 138 medals at the Winter Olympic Games, mostly in alpine skiing.
+            France has hosted the Olympic games on five occasions and is planning to host the sixth:
+            the 1900 Summer Olympics in Paris, the 1924 Winter Olympics in Chamonix,
+            the 1924 Summer Olympics in Paris, the 1968 Winter Olympics in Grenoble,
+            the 1992 Winter Olympics in Albertville and the 2024 Summer Olympics in Paris.
+        </p>
+    </div>
     <div class="kv_formDiv">
         <form>
             <input type="text" id="kv_start" placeholder="Start" />
             <input type="end" id="kv_end" placeholder="End" />
+            <select id="kv_travellOptions">
+                <option value="">Select One …</option>
+                <option value="WALKING">WALKING</option>
+                <option value="DRIVING">DRIVING</option>
+                <option value="BICYCLE">BICYCLE</option>
+                <option value="BUS">BUS</option>
+                <option value="TRAIN">TRAIN</option>
+                <option value="SUBWAY">SUBWAY</option>
+            </select>
             <button type="submit" id="kv_submitButton">Submit</button>
         </form>
     </div>
-    <div class="kv_travellButton">
-        <input type="checkbox" id="kv_Walking" value="WALKING">WALKING</input type="checkbox">
-        <input type="checkbox" id="kv_Driving" value="DRIVING">DRIVING</input type="checkbox">
-        <input type="checkbox" id="kv_Bicycle" value="BICYCLE">BICYCLE</input type="checkbox">
-        <input type="checkbox" id="kv_Bus" value="BUS">BUS</input type="checkbox">
-        <input type="checkbox" id="kv_Train" value="Train">TRAIN</input type="checkbox">
-        <input type="checkbox" id="kv_Subway" value="SUBWAY">SUBWAY</button>
-    </div>
+    
     <div id="kv_parentElementId">
         <button class="kv_variousfilterButton" id="kv_Res">Restraurent</button>
         <button class="kv_variousfilterButton" id="kv_Mus">Museum</button>
-        <button class="kv_variousfilterButton" id="kv_Amu">Amusement Park</button>
+        <button class="kv_variousfilterButton" id="kv_Amu">Park</button>
         <button class="kv_variousfilterButton" id="kv_Oly">Olympic Stadium</button>
         <button class="kv_variousfilterButton" id="kv_All">All</button>
     </div>
     <div class="kv_currencyOption">
-        <input type="number" id="kv_initalValue"/>
+        <label>Currency Exchange</label>
+        <input type="number" id="kv_initalValue" />
         <label>From</label>
         <select id="kv_from_Selected" class="kv_currencies">
             <option value="">Select One …</option>
@@ -152,6 +167,8 @@
             <option value="ZAR">ZAR</option>
         </select>&nbsp;&nbsp;
         <button id="kv_button">Go</button>
+        <label>Result:</label>
+        <input type="text" id="kv_result" />
     </div>
     <div id="Direction">
 
