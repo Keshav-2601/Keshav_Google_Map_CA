@@ -14,6 +14,8 @@ function loadMap() {
         .then((res) => res.json())
         .then((result) => {
             result.map((res) => {
+                // console.log('resultis:->',res);
+                let Originalurl=res.img;//getting the url
                 var request = {
                     query: res.title,
                     fields: ['place_id']
@@ -29,7 +31,8 @@ function loadMap() {
                         service.getDetails(detailsrequest, function callback(finalresult, status) {
                             if (status == google.maps.places.PlacesServiceStatus.OK) {
                                 // console.log('status at line 2 is:',status);
-                                createMarker(finalresult, map);
+                               
+                                createMarker(finalresult, map,Originalurl);
                             } else {
                                 console.error('Error fetching place details:', status);
                             }
@@ -220,13 +223,17 @@ function filterMaker(selectedtypes) {
 }
 
 
-function createMarker(place, map) {
+function createMarker(place, map,url) {
     console.log('place api:', place);
     if (!place.geometry || !place.geometry.location) return;
     const marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
-        mapId: 'c3a03b34da8f8d5a'
+        mapId: 'c3a03b34da8f8d5a',
+        icon:{
+            url:url,
+            scaledSize: new google.maps.Size(40, 40),
+        }
     });
     globalMarker.push({
         marker: marker,

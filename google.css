@@ -484,7 +484,7 @@ form #kv_submitButton:hover {
   }
   #map {
     position: relative;
-    left: 100px;
+    left: -30px;
   }
   .kv_langClass {
     position: absolute;
@@ -493,13 +493,13 @@ form #kv_submitButton:hover {
   }
   .kv_currencyOption {
     position: absolute;
-    right: -400px;
-    top: 200px;
+    left: 900px;
+    top: 50px;
   }
   #kv_parentElementId {
     position: relative;
     top: 10px;
-    left: 600px;
+    left: 660px;
   }
 }
 

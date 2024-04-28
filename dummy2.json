@@ -3,364 +3,364 @@
     "title": "Stade de France",
     "latitude": "48.9245",
     "longitude": "2.3604",
-    "img": "https://example.com/stade_de_france.jpg",
+    "img": "allicons/stadium1.png",
     "type": "sports venue"
   },
   {
     "title": "Parc des Princes",
     "latitude": "48.8417",
     "longitude": "2.2534",
-    "img": "https://example.com/parc_des_princes.jpg",
+    "img": "allicons/stadium1.png",
     "type": "sports venue"
   },
   {
     "title": "Roland Garros Stadium",
     "latitude": "48.8471",
     "longitude": "2.2539",
-    "img": "https://example.com/roland_garros_stadium.jpg",
+    "img": "allicons/stadium1.png",
     "type": "sports venue"
   },
   {
     "title": "Eiffel Tower Restaurant",
     "latitude": "48.8584",
     "longitude": "2.2945",
-    "img": "https://example.com/eiffel_tower_restaurant.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Le Grand Véfour",
     "latitude": "48.8636",
     "longitude": "2.3363",
-    "img": "https://example.com/le_grand_vefour.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Le Jules Verne",
     "latitude": "48.8560",
     "longitude": "2.2924",
-    "img": "https://example.com/le_jules_verne.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "La Tour d'Argent",
     "latitude": "48.8504",
     "longitude": "2.3543",
-    "img": "https://example.com/la_tour_dargent.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "L'Astrance",
     "latitude": "48.8575",
     "longitude": "2.2956",
-    "img": "https://example.com/lastrance.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Louvre Museum",
     "latitude": "48.8606",
     "longitude": "2.3376",
-    "img": "https://example.com/louvre_museum.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Musée d'Orsay",
     "latitude": "48.8599",
     "longitude": "2.3266",
-    "img": "https://example.com/musee_dorsay.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Centre Pompidou",
     "latitude": "48.8606",
     "longitude": "2.3527",
-    "img": "https://example.com/centre_pompidou.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "The Louvre Pyramid",
     "latitude": "48.8600",
     "longitude": "2.3355",
-    "img": "https://example.com/louvre_pyramid.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Disneyland Hotel",
     "latitude": "48.8722",
     "longitude": "2.7760",
-    "img": "https://example.com/disneyland_hotel.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Four Seasons Hotel George V",
     "latitude": "48.8698",
     "longitude": "2.3005",
-    "img": "https://example.com/four_seasons_hotel_george_v.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Hotel Plaza Athénée",
     "latitude": "48.8696",
     "longitude": "2.3013",
-    "img": "https://example.com/hotel_plaza_athenee.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "The Peninsula Paris",
     "latitude": "48.8724",
     "longitude": "2.2827",
-    "img": "https://example.com/the_peninsula_paris.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Le Meurice",
     "latitude": "48.8658",
     "longitude": "2.3280",
-    "img": "https://example.com/le_meurice.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Hôtel de Crillon",
     "latitude": "48.8656",
     "longitude": "2.3215",
-    "img": "https://example.com/hotel_de_crillon.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Hotel Lutetia",
     "latitude": "48.8485",
     "longitude": "2.3263",
-    "img": "https://example.com/hotel_lutetia.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Hotel de Vendome",
     "latitude": "48.8659",
     "longitude": "2.3291",
-    "img": "https://example.com/hotel_de_vendome.jpg",
+    "img": "allicons/hotel.png",
     "type": "hotel"
   },
   {
     "title": "Bateaux Parisiens",
     "latitude": "48.8606",
     "longitude": "2.3301",
-    "img": "https://example.com/bateaux_parisiens.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Le Cinq",
     "latitude": "48.8703",
     "longitude": "2.3083",
-    "img": "https://example.com/le_cinq.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Alain Ducasse au Plaza Athénée",
     "latitude": "48.8695",
     "longitude": "2.3011",
-    "img": "https://example.com/alain_ducasse_athenee.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Pierre Gagnaire",
     "latitude": "48.8615",
     "longitude": "2.3145",
-    "img": "https://example.com/pierre_gagnaire.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Alain Ducasse at the Dorchester",
     "latitude": "48.8666",
     "longitude": "2.3045",
-    "img": "https://example.com/alain_ducasse_dorchester.jpg",
+    "img": "allicons/res.png",
     "type": "restaurant"
   },
   {
     "title": "Musée Picasso",
     "latitude": "48.8598",
     "longitude": "2.3629",
-    "img": "https://example.com/musee_picasso.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Museum of Modern Art",
     "latitude": "48.8606",
     "longitude": "2.3620",
-    "img": "https://example.com/museum_of_modern_art.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Musée de l'Orangerie",
     "latitude": "48.8639",
     "longitude": "2.3227",
-    "img": "https://example.com/musee_de_l_orangerie.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Sainte-Chapelle",
     "latitude": "48.8556",
     "longitude": "2.3458",
-    "img": "https://example.com/sainte_chapelle.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Musée Rodin",
     "latitude": "48.8552",
     "longitude": "2.3155",
-    "img": "https://example.com/musee_rodin.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Jardin des Tuileries",
     "latitude": "48.8635",
     "longitude": "2.3275",
-    "img": "https://example.com/jardin_des_tuileries.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Luxembourg Gardens",
     "latitude": "48.8462",
     "longitude": "2.3372",
-    "img": "https://example.com/luxembourg_gardens.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Parc Monceau",
     "latitude": "48.8791",
     "longitude": "2.3072",
-    "img": "https://example.com/parc_monceau.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Jardin des Plantes",
     "latitude": "48.8436",
     "longitude": "2.3608",
-    "img": "https://example.com/jardin_des_plantes.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Bois de Boulogne",
     "latitude": "48.8738",
     "longitude": "2.2558",
-    "img": "https://example.com/bois_de_boulogne.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Palais Garnier",
     "latitude": "48.8718",
     "longitude": "2.3311",
-    "img": "https://example.com/palais_garnier.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Montmartre",
     "latitude": "48.8867",
     "longitude": "2.3431",
-    "img": "https://example.com/montmartre.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Arc de Triomphe",
     "latitude": "48.8738",
     "longitude": "2.2950",
-    "img": "https://example.com/arc_de_triomphe.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Notre-Dame de Paris",
     "latitude": "48.8529",
     "longitude": "2.3499",
-    "img": "https://example.com/notre_dame_de_paris.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Sainte-Chapelle",
     "latitude": "48.8556",
     "longitude": "2.3458",
-    "img": "https://example.com/sainte_chapelle.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Parc de la Villette",
     "latitude": "48.8937",
     "longitude": "2.3931",
-    "img": "https://example.com/parc_de_la_villette.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Père Lachaise Cemetery",
     "latitude": "48.8614",
     "longitude": "2.3933",
-    "img": "https://example.com/pere_lachaise_cemetery.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Musée de l'Armée",
     "latitude": "48.8566",
     "longitude": "2.3121",
-    "img": "https://example.com/musee_de_l_armee.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Petit Palais",
     "latitude": "48.8660",
     "longitude": "2.3142",
-    "img": "https://example.com/petit_palais.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Palais de Tokyo",
     "latitude": "48.8655",
     "longitude": "2.2901",
-    "img": "https://example.com/palais_de_tokyo.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Jardin du Luxembourg",
     "latitude": "48.8465",
     "longitude": "2.3372",
-    "img": "https://example.com/jardin_du_luxembourg.jpg",
+    "img": "allicons/park.png",
     "type": "park"
   },
   {
     "title": "Panthéon",
     "latitude": "48.8462",
     "longitude": "2.3459",
-    "img": "https://example.com/pantheon.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Musée Marmottan Monet",
     "latitude": "48.8643",
     "longitude": "2.2712",
-    "img": "https://example.com/musee_marmottan_monet.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Musée de l'Orangerie",
     "latitude": "48.8639",
     "longitude": "2.3227",
-    "img": "https://example.com/musee_de_l_orangerie.jpg",
+    "img": "allicons/museum.png",
     "type": "museum"
   },
   {
     "title": "Pont Alexandre III",
     "latitude": "48.8638",
     "longitude": "2.3131",
-    "img": "https://example.com/pont_alexandre_iii.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Place des Vosges",
     "latitude": "48.8543",
     "longitude": "2.3684",
-    "img": "https://example.com/place_des_vosges.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   },
   {
     "title": "Les Invalides",
     "latitude": "48.8566",
     "longitude": "2.3121",
-    "img": "https://example.com/les_invalides.jpg",
+    "img": "allicons/landmark.png",
     "type": "landmark"
   }
 ]
