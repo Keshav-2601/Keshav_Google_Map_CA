@@ -377,7 +377,7 @@ form #kv_submitButton:hover {
   }
   #kv_parentElementId {
     position: relative;
-    top: -1px;
+    top: -100px;
     left: 600px;
   }
 }
@@ -479,28 +479,26 @@ form #kv_submitButton:hover {
   form {
     position: relative;
     bottom: 400px;
+    left: -50px;
     padding: 20px;
   }
   #map {
     position: relative;
     left: 100px;
   }
-  #kv_showDirection {
-    position: absolute;
-    top: -300px;
-  }
   .kv_langClass {
     position: absolute;
-    top: 200px;
+    top: 30px;
+    left: 930px;
   }
   .kv_currencyOption {
     position: absolute;
-    right: -490px;
-    top: 140px;
+    right: -400px;
+    top: 200px;
   }
   #kv_parentElementId {
     position: relative;
-    top: -270px;
+    top: 10px;
     left: 600px;
   }
 }
