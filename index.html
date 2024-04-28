@@ -10,9 +10,8 @@
 
 <body>
 
-    <div id=map></div>
     <div class="kv_infoFrance">
-        <h1>French Olmypic History</h1>
+        <h1 id="kv_h1">French Olmypic History</h1>
         <p id="kv_para">
             The modern Olympic Games were founded by French historian Pierre de Coubertin.
             France has competed in every edition (both Summer and Winter),
@@ -27,6 +26,8 @@
             the 1992 Winter Olympics in Albertville and the 2024 Summer Olympics in Paris.
         </p>
     </div>
+    <div id=map></div>
+    
     <div class="kv_formDiv">
         <form>
             <input type="text" id="kv_start" placeholder="Start" />
@@ -35,11 +36,16 @@
                 <option value="">Select One …</option>
                 <option value="WALKING">WALKING</option>
                 <option value="DRIVING">DRIVING</option>
-                <option value="BICYCLE">BICYCLE</option>
-                <option value="BUS">BUS</option>
-                <option value="TRAIN">TRAIN</option>
-                <option value="SUBWAY">SUBWAY</option>
+                <option value="BICYCLING">BICYCLING</option>
+                <option value="TRANSIT">TRANSIT</option>
             </select>
+            <div class="kv_transitdifferentOptions">
+                <input id="kv_busTransit" type="checkbox" />BUS
+                <input id="kv_trainTransit" type="checkbox"/>TRAIN
+                <input id="kv_subwayTransit" type="checkbox"/>SUBWAY 
+            </div>
+           
+
             <button type="submit" id="kv_submitButton">Submit</button>
         </form>
     </div>
@@ -56,7 +62,7 @@
         <input type="number" id="kv_initalValue" />
         <label>From</label>
         <select id="kv_from_Selected" class="kv_currencies">
-            <option value="">Select One …</option>
+            <option value="">Select</option>
             <option value="USD">USD</option>
             <option value="AED">AED</option>
             <option value="ARS">ARS</option>
@@ -112,7 +118,7 @@
         </select>
         <label>To</label>
         <select id='kv_to_Selected' class="kv_currencies">
-            <option value="">Select One …</option>
+            <option value="">Select</option>
             <option value="USD">USD</option>
             <option value="AED">AED</option>
             <option value="ARS">ARS</option>
@@ -170,7 +176,7 @@
         <label>Result:</label>
         <input type="text" id="kv_result" />
     </div>
-    <div>
+    <div class="kv_langClass">
         <button id="kv_langButton">Go</button>
         <select id="kv_lanOptions" name="language">
             <option value="en">English</option>
@@ -216,7 +222,7 @@
     </div>
     
     <div id="Direction">
-
+       <button id="kv_showDirection">DIRECTIONS</button>
     </div>
     <div id="kv_parentElementId"></div>
     <script src="script.js"></script>

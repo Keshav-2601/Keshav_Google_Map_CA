@@ -7,6 +7,7 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #f4f4f4;
+  background-image: url("https://wallpaperbat.com/img/8619726-paris-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28,11 +29,11 @@ form {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   width: 300px;
   position: relative;
   bottom: 390px;
+  background: linear-gradient(to right, #0055a4, #ffffff, #ef4135);
 }
 form input[type=text], form input[type=end] {
   width: 100%;
@@ -46,28 +47,34 @@ form #kv_submitButton {
   width: 100%;
   padding: 10px;
   border: none;
-  background-color: #4CAF50;
-  color: white;
+  background: #0055a4;
+  color: black;
   cursor: pointer;
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
 }
 form #kv_submitButton:hover {
-  background-color: #45a049;
+  background: rgb(16, 85, 211);
 }
 
 .kv_formDiv {
   height: 100px;
   width: 200px;
-  float: right;
-  position: relative;
-  right: 200px;
-  bottom: 10px;
+  position: absolute;
+  left: 50px;
+  top: 800px;
 }
 
-#Direction {
-  width: 100%;
-  margin: 0px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+#kv_showDirection {
+  background-color: #007bff;
+  position: relative;
+  bottom: -300px;
+  left: 100px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
 }
 
 .kv_currencyOption {
@@ -75,13 +82,14 @@ form #kv_submitButton:hover {
   align-items: center;
   justify-content: center;
   margin: 20px;
-  position: relative;
-  bottom: 200px;
-  left: 230px;
+  position: absolute;
+  bottom: 350px;
+  left: 900px;
+  flex-direction: column;
 }
 .kv_currencyOption label {
   margin: 0 10px;
-  color: red;
+  color: black;
   font-weight: bold;
 }
 .kv_currencyOption select {
@@ -92,6 +100,7 @@ form #kv_submitButton:hover {
   color: #007bff;
   font-size: 16px;
   cursor: pointer;
+  width: 100px;
 }
 .kv_currencyOption input[type=text], .kv_currencyOption input[type=number] {
   padding: 8px;
@@ -100,6 +109,7 @@ form #kv_submitButton:hover {
   background-color: #f8f9fa;
   color: #007bff;
   font-size: 16px;
+  width: 100px;
 }
 
 #kv_button {
@@ -110,14 +120,13 @@ form #kv_submitButton:hover {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 #kv_button:hover {
   background-color: #0062cc;
 }
 
 .kv_infoFrance {
-  width: 300px;
+  width: 900px;
 }
 .kv_infoFrance #kv_para {
   color: #0055a4;
@@ -133,10 +142,10 @@ form #kv_submitButton:hover {
 
 #kv_parentElementId {
   height: 20px;
-  width: 500px;
-  position: relative;
-  bottom: 800px;
-  left: 800px;
+  width: 800px;
+  position: absolute;
+  bottom: 320px;
+  left: 870px;
 }
 
 .kv_variousfilterButton {
@@ -202,6 +211,58 @@ form #kv_submitButton:hover {
 #kv_travellOptions option {
   background-color: #ffffff;
   color: #333333;
+}
+
+.kv_langClass {
+  position: absolute;
+  bottom: 650px;
+  left: 1150px;
+}
+
+#kv_langButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 210px;
+  top: 2px;
+}
+#kv_langButton:hover {
+  background-color: #0062cc;
+}
+
+#kv_lanOptions {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+}
+
+#kv_lanOptions option {
+  padding: 8px;
+  font-size: 16px;
+}
+#kv_lanOptions option:hover {
+  background-color: #f0f0f0;
+}
+
+#kv_h1 {
+  font-size: 2em;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, #0055a4, #ffffff, #ef4135);
+  font-family: "Parisienne", cursive;
+  font-weight: bold;
+}
+
+.kv_transitdifferentOptions {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 4px;
 }
 
 /*# sourceMappingURL=google.css.map */

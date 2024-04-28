@@ -100,8 +100,17 @@ function loadMap() {
 
         calculatedistance(directionService, directionRenderer, map);
     }
+    let direcbool=false;
+    document.getElementById('kv_showDirection').addEventListener('click',function(){
+        direcbool=!direcbool;
+        if (direcbool) {
+            directionRenderer.setPanel(document.getElementById('Direction'));
+        } else {   
+            directionRenderer.setPanel(null);
+        }
+    })
+    
 
-    directionRenderer.setPanel(document.getElementById('Direction'));
 
     const startcity = document.getElementById('kv_start');
     const endcity = document.getElementById('kv_end');
@@ -228,10 +237,13 @@ function createMarker(place, map) {
         let content = '<div><strong>' + place.name + '</strong><br>' +
             '<strong>Business_status:</strong> ' + place.business_status + '<br>' + '<br>' + '<strong>Address:</strong>' +
             place.formatted_address + '</div>' + '<br>' + '<strong>Opening Hours:</strong>';
-        if (place.opening_hours.weekday_text) {
+        if (place.opening_hours && place.opening_hours.weekday_text) {
             for (let i = 0; i < place.opening_hours.weekday_text.length; i++) {
                 content += '<br>' + place.opening_hours.weekday_text[i] + '<br>';
             }
+        }
+        else{
+             content+='<br>'+'<strong>No info about days</strong>'+'<br>';
         }
         'Rating:';
         if (place.rating) {
@@ -266,6 +278,23 @@ function calculatedistance(directionService, directionRenderer, map) {
         destination: end,
         travelMode: google.maps.TravelMode[travelmode]
     };
+    if(travelmode==='TRANSIT'){
+        let transitOptions=[];
+        if(document.getElementById('kv_busTransit').checked){
+            transitOptions.push('BUS');
+        }
+        if(document.getElementById('kv_trainTransit').checked){
+            transitOptions.push('TRAIN');
+        }
+        
+        if(document.getElementById('kv_subwayTransit').checked){
+            transitOptions.push('SUBWAY');
+        }
+        request.transitOptions={
+                modes:transitOptions
+        }
+        
+    }
     console.log('Travel mode:', travelmode);
     directionService.route(request, function (result, status) {
         console.log('Reseult', result);
