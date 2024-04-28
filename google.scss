@@ -332,18 +332,13 @@ $primary-color: #007bff;
         background-image: none;
     }
     .kv_infoFrance{
-        position: absolute;
-        bottom:-300px;
-        width: 480px;;
+       display:none;
     }
     #map {
         position: absolute;
         top:-200px;
         width: 100%;
     }
-    #kv_showDirection{
-        display: none;
-     }
     .kv_langClass {
         left: 70%;
     }
@@ -352,22 +347,29 @@ $primary-color: #007bff;
         left: 30px;
     }
     form{
+        position: relative;
+        top:-500px;
         width: 200px;
     }
     #kv_parentElementId{
         position: relative;
-        bottom: -200px;;
+        top: 500px;;
         left: 10px;
     }
     .kv_currencyOption{
         position: relative;
-        bottom: -350px;
-        left:150px;
+        bottom: -250px;
+        left:200px;
     }
     .kv_langClass{
         position: relative;
-        top:-50px;
+        top:-120px;
         left:100px;
+    }
+    #kv_langButton{
+        position: absolute;
+        top:3px;
+        left:210px;
     }
     
 }
@@ -398,12 +400,13 @@ $primary-color: #007bff;
 }
 
 //LANDSCAPES MODES
-
+//done
 @media screen and (max-width: 500px)and (orientation: landscape) {
     body {
         background-size: cover;
         background-image: none;
     }
+    
     #map {
         width:50%;
         float: left;
@@ -412,17 +415,19 @@ $primary-color: #007bff;
         display: flex;
         flex-direction: column-reverse;
         position:relative;
-        top:580px;
-        left:-230px;
+        top:600px;
+        left:-250px;
         width: 100px;
     }
     .kv_infoFrance{
-        display: none;
+        position: absolute;
+        top: 700px;
+        width: 400px;;
     }
     form {
         width: 90%;
         position:relative;
-        left:100px;
+        left:50px;
         bottom: 370px;
     }
     #kv_showDirection{
@@ -436,23 +441,24 @@ $primary-color: #007bff;
     }
    #kv_langButton{
     position:absolute;
-     top:40px;
-     left:270px;
+     top:1px;
+     left:500px;
      width:50px;
    }
     .kv_currencyOption{
         position: relative;
-        left:-70px;
+        left:-80px;
         bottom:-100px;
     }
 }
+//done
 @media screen and (min-width: 500px) and (max-width: 1000px)and (orientation: landscape) {
     body{
         background-image: none;
     }
     .kv_infoFrance{
         position: absolute;
-        bottom:-300px;
+        bottom:-800px;
         width: 480px;;
     }
     #map {
@@ -471,47 +477,55 @@ $primary-color: #007bff;
         left: 30px;
     }
     form{
+        position:relative;
+        top:-500px;
         width: 200px;
     }
     #kv_parentElementId{
-        position: relative;
-        bottom: -200px;;
+        position:absolute;
+        top: 10px;;
         left: 10px;
     }
     .kv_currencyOption{
         position: relative;
-        bottom: -350px;
+        bottom: -250px;
         left:150px;
     }
     .kv_langClass{
         position: relative;
-        top:-50px;
+        top:-70px;
         left:100px;
     }
     
 }
-@media screen and (min-width: 1000px)and (orientation:landscape) {
+
+@media screen and (min-width: 1000px) and (orientation: landscape) {
     form {
-        position: relative ;
+        position: relative;
         bottom: 400px;
         padding: 20px;
     }
-    #map{
-        position:relative;
-        left:100px;
+    #map {
+        position: relative;
+        left: 100px;
+    }
+    
+   #kv_showDirection{
+      position: absolute;
+      top:-300px;
     }
     .kv_langClass {
         position: absolute;
-        top:200px;
+        top: 200px;
     }
-    .kv_currencyOption{
+    .kv_currencyOption {
         position: absolute;
-        right:-490px;
+        right: -490px;
+        top: 140px;
     }
-    #kv_parentElementId{
+    #kv_parentElementId {
         position: relative;
-        top:-1px;
-        left:600px;
+        top: -270px;
+        left: 600px;
     }
-
 }
