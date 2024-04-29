@@ -107,7 +107,7 @@ function loadMap() {
     document.getElementById('kv_showDirection').addEventListener('click',function(){
         direcbool=!direcbool;
         if (direcbool) {
-            directionRenderer.setPanel(document.getElementById('Direction'));
+            directionRenderer.setPanel(document.getElementById('kv_Direction'));
         } else {   
             directionRenderer.setPanel(null);
         }

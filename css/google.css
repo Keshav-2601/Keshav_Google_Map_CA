@@ -65,6 +65,10 @@ form #kv_submitButton:hover {
   top: 800px;
 }
 
+#kv_Direction {
+  background-color: #f91391;
+}
+
 #kv_showDirection {
   background-color: #007bff;
   position: relative;
