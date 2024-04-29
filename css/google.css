@@ -66,7 +66,7 @@ form #kv_submitButton:hover {
 }
 
 #kv_Direction {
-  background-color: #f91391;
+  background: linear-gradient(to right, #0055a4, #ffffff, #ef4135);
 }
 
 #kv_showDirection {
@@ -96,17 +96,7 @@ form #kv_submitButton:hover {
   color: black;
   font-weight: bold;
 }
-.kv_currencyOption select {
-  padding: 8px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  color: #007bff;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100px;
-}
-.kv_currencyOption input[type=text], .kv_currencyOption input[type=number] {
+.kv_currencyOption select, .kv_currencyOption input[type=text], .kv_currencyOption input[type=number] {
   padding: 8px;
   border: 1px solid #ced4da;
   border-radius: 5px;
@@ -292,7 +282,7 @@ form #kv_submitButton:hover {
   form {
     width: 90%;
     position: relative;
-    left: 100px;
+    left: 70px;
     bottom: 370px;
   }
   #kv_showDirection {
@@ -319,6 +309,7 @@ form #kv_submitButton:hover {
 @media screen and (min-width: 500px) and (max-width: 1000px) and (orientation: portrait) {
   body {
     background-image: none;
+    background: linear-gradient(to right, #0055a4, #ffffff);
   }
   .kv_infoFrance {
     display: none;
@@ -342,12 +333,12 @@ form #kv_submitButton:hover {
   }
   #kv_parentElementId {
     position: relative;
-    top: 500px;
+    top: -200px;
     left: 10px;
   }
   .kv_currencyOption {
     position: relative;
-    bottom: -250px;
+    bottom: 210px;
     left: 200px;
   }
   .kv_langClass {
@@ -470,7 +461,7 @@ form #kv_submitButton:hover {
   }
   .kv_currencyOption {
     position: relative;
-    bottom: -250px;
+    bottom: 150px;
     left: 150px;
   }
   .kv_langClass {
@@ -488,7 +479,7 @@ form #kv_submitButton:hover {
   }
   #map {
     position: relative;
-    left: -30px;
+    left: 50px;
   }
   .kv_langClass {
     position: absolute;

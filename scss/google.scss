@@ -6,6 +6,7 @@ $blue: #0055a4;
 $white: #ffffff;
 $red: #ef4135;
 
+
  .kv_variousfilterButton{
     border-radius: 20px;
     cursor: pointer;
@@ -76,8 +77,7 @@ form {
 
 
 #kv_Direction{
-    background-color: #f91391;
-    
+    background:linear-gradient(to right,$blue,$white,$red);
 }
 
 #kv_showDirection{
@@ -106,18 +106,7 @@ form {
       font-weight: bold;
     }
     
-    select {
-      padding: 8px;
-      border: 1px solid $border-color;
-      border-radius: 5px;
-      background-color: $background-color;
-      color: $primary-color;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100px;
-    }
-    
-    input[type="text"],input[type='number'] {
+    select,input[type="text"],input[type='number'] {
       padding: 8px;
       border: 1px solid $border-color;
       border-radius: 5px;
@@ -231,7 +220,7 @@ form {
         }
 }
 
-$primary-color: #007bff; 
+
 
 .kv_langClass{
     position: absolute;
@@ -306,7 +295,7 @@ $primary-color: #007bff;
     form {
         width: 90%;
         position:relative;
-        left:100px;
+        left:70px;
         bottom: 370px;
     }
     #kv_showDirection{
@@ -333,6 +322,7 @@ $primary-color: #007bff;
 @media screen and (min-width: 500px) and (max-width: 1000px)and (orientation: portrait) {
     body{
         background-image: none;
+        background: linear-gradient(to right,$blue,$white);
     }
     .kv_infoFrance{
        display:none;
@@ -356,12 +346,12 @@ $primary-color: #007bff;
     }
     #kv_parentElementId{
         position: relative;
-        top: 500px;;
+        top: -200px;;
         left: 10px;
     }
     .kv_currencyOption{
         position: relative;
-        bottom: -250px;
+        bottom: 210px;
         left:200px;
     }
     .kv_langClass{
@@ -443,7 +433,7 @@ $primary-color: #007bff;
         margin-left: -30px;
     }
    #kv_langButton{
-    position:absolute;
+     position:absolute;
      top:1px;
      left:500px;
      width:50px;
@@ -491,7 +481,7 @@ $primary-color: #007bff;
     }
     .kv_currencyOption{
         position: relative;
-        bottom: -250px;
+        bottom: 150px;
         left:150px;
     }
     .kv_langClass{
@@ -511,7 +501,7 @@ $primary-color: #007bff;
     }
     #map {
         position: relative;
-        left: -30px;
+        left: 50px;
     }
     
     .kv_langClass {

@@ -15,7 +15,7 @@ function loadMap() {
         .then((result) => {
             result.map((res) => {
                 // console.log('resultis:->',res);
-                let Originalurl=res.img;//getting the url
+                let Originalurl = res.img;//getting the url
                 var request = {
                     query: res.title,
                     fields: ['place_id']
@@ -31,8 +31,8 @@ function loadMap() {
                         service.getDetails(detailsrequest, function callback(finalresult, status) {
                             if (status == google.maps.places.PlacesServiceStatus.OK) {
                                 // console.log('status at line 2 is:',status);
-                               
-                                createMarker(finalresult, map,Originalurl);
+
+                                createMarker(finalresult, map, Originalurl);
                             } else {
                                 console.error('Error fetching place details:', status);
                             }
@@ -103,17 +103,15 @@ function loadMap() {
 
         calculatedistance(directionService, directionRenderer, map);
     }
-    let direcbool=false;
-    document.getElementById('kv_showDirection').addEventListener('click',function(){
-        direcbool=!direcbool;
+    let direcbool = false;
+    document.getElementById('kv_showDirection').addEventListener('click', function () {
+        direcbool = !direcbool;
         if (direcbool) {
             directionRenderer.setPanel(document.getElementById('kv_Direction'));
-        } else {   
+        } else {
             directionRenderer.setPanel(null);
         }
     })
-    
-
 
     const startcity = document.getElementById('kv_start');
     const endcity = document.getElementById('kv_end');
@@ -155,6 +153,7 @@ function loadMap() {
                 document.getElementById('kv_result').value = res.rates[to_value]
             );
     })
+    
     document.getElementById('kv_langButton').addEventListener('click', function () {
         const text = document.getElementById('kv_para').textContent;
         const options = {
@@ -191,15 +190,15 @@ function loadMap() {
                         from: `${detect_language}`
                     })
                 };
-                fetch(`https://nlp-translation.p.rapidapi.com/v1/translate`,options)
-                    .then((res) => res.json()).catch((error)=>console.log(error))
-                    .then((result)=>{
-                        console.log('result:',result);
-                        document.getElementById('kv_para').textContent=result.translated_text[document.getElementById('kv_lanOptions').value];
-                    }).catch((error)=>console.log(error));
+                fetch(`https://nlp-translation.p.rapidapi.com/v1/translate`, options)
+                    .then((res) => res.json()).catch((error) => console.log(error))
+                    .then((result) => {
+                        console.log('result:', result);
+                        document.getElementById('kv_para').textContent = result.translated_text[document.getElementById('kv_lanOptions').value];
+                    }).catch((error) => console.log(error));
 
             })
-            .catch(err => console.error('The error is :->',err));
+            .catch(err => console.error('The error is :->', err));
     })
 }
 
@@ -223,15 +222,15 @@ function filterMaker(selectedtypes) {
 }
 
 
-function createMarker(place, map,url) {
+function createMarker(place, map, url) {
     console.log('place api:', place);
     if (!place.geometry || !place.geometry.location) return;
     const marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
         mapId: 'c3a03b34da8f8d5a',
-        icon:{
-            url:url,
+        icon: {
+            url: url,
             scaledSize: new google.maps.Size(40, 40),
         }
     });
@@ -249,8 +248,8 @@ function createMarker(place, map,url) {
                 content += '<br>' + place.opening_hours.weekday_text[i] + '<br>';
             }
         }
-        else{
-             content+='<br>'+'<strong>No info about days</strong>'+'<br>';
+        else {
+            content += '<br>' + '<strong>No info about days</strong>' + '<br>';
         }
         'Rating:';
         if (place.rating) {
@@ -285,29 +284,29 @@ function calculatedistance(directionService, directionRenderer, map) {
         destination: end,
         travelMode: google.maps.TravelMode[travelmode]
     };
-    if(travelmode==='TRANSIT'){
-        let transitOptions=[];
-        if(document.getElementById('kv_busTransit').checked){
+    if (travelmode === 'TRANSIT') {
+        let transitOptions = [];
+        if (document.getElementById('kv_busTransit').checked) {
             transitOptions.push('BUS');
         }
-        if(document.getElementById('kv_trainTransit').checked){
+        if (document.getElementById('kv_trainTransit').checked) {
             transitOptions.push('TRAIN');
         }
-        
-        if(document.getElementById('kv_subwayTransit').checked){
+
+        if (document.getElementById('kv_subwayTransit').checked) {
             transitOptions.push('SUBWAY');
         }
-        request.transitOptions={
-                modes:transitOptions
+        request.transitOptions = {
+            modes: transitOptions
         }
-        
+
     }
     console.log('Travel mode:', travelmode);
     directionService.route(request, function (result, status) {
         console.log('Reseult', result);
         if (status == google.maps.DirectionsStatus.OK) {
             console.log('Directions result:', result);
-            directionRenderer.setDirections(result);// use setdirection to get blue line okay
+            directionRenderer.setDirections(result);
             directionRenderer.setMap(map);
         }
         else {
